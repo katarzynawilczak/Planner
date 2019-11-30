@@ -3,4 +3,11 @@
     <string name="list_btn">To do</string>
     <string name="schedule_btn">Schedule</string>
     <string name="calendar_btn">Calendar</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="addNote">Add new task</string>
+    <string name="AddBtn">Add</string>
+    <string name="EnterTask">Enter task name</string>
+    <string name="EnterDescription">Enter task description</string>
+    <string name="DeleteTask">Delete task</string>
+
 </resources>
