@@ -10,4 +10,7 @@
     <string name="EnterDescription">Enter task description</string>
     <string name="DeleteTask">Delete task</string>
 
+    <!-- calendar -->
+    <string name="addCalendarNote">Add new note</string>
+
 </resources>
