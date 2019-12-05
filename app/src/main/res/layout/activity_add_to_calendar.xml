@@ -9,17 +9,15 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/dataFormat"
-        android:inputType="date|textPersonName"
-        android:text="@string/dataFormat" />
+        android:inputType="date|textPersonName" />
 
     <EditText
         android:id="@+id/note"
         android:layout_width="match_parent"
         android:layout_height="197dp"
         android:ems="10"
-        android:hint="@string/dataFormat"
-        android:inputType="textPersonName"
-        android:text="@string/enterCalendarNote" />
+        android:hint="@string/enterCalendarNote"
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/noteId"

@@ -10,9 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".AddToListActivity"></activity>
+        <activity android:name=".calendar.AddToCalendarActivity"></activity>
         <activity android:name=".ListActivity" />
         <activity android:name=".ScheduleActivity" />
-        <activity android:name=".CalendarActivity" />
+        <activity android:name=".calendar.CalendarActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
