@@ -12,5 +12,7 @@
 
     <!-- calendar -->
     <string name="addCalendarNote">Add new note</string>
+    <string name="dataFormat">dd.mm.yyyy</string>
+    <string name="enterCalendarNote">Note</string>
 
 </resources>

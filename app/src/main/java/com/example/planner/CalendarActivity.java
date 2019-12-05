@@ -1,5 +1,6 @@
 package com.example.planner;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
@@ -81,8 +82,9 @@ public class CalendarActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.addNoteId) {
-            //add note
+        if (item.getItemId() == R.id.addCalendarNoteId) {
+            Intent intent = new Intent(CalendarActivity.this, AddToCalendarActivity.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
