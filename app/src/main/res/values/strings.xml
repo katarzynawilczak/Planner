@@ -10,6 +10,13 @@
     <string name="EnterDescription">Enter task description</string>
     <string name="DeleteTask">Delete task</string>
 
+    <!-- schedule -->
+    <string name="tab_1">MON</string>
+    <string name="tab_2">TUE</string>
+    <string name="tab_3">WED</string>
+    <string name="tab_4">THUR</string>
+    <string name="tab_5">FRI</string>
+
     <!-- calendar -->
     <string name="addCalendarNote">Add new note</string>
     <string name="dataFormat">dd.mm.yyyy</string>

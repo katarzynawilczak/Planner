@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.planner.calendar.CalendarActivity;
+import com.example.planner.schedule.ScheduleActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
