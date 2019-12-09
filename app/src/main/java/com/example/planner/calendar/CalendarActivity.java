@@ -1,15 +1,24 @@
 package com.example.planner.calendar;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.planner.MainActivity;
 import com.example.planner.MyDBHandler;
 import com.example.planner.R;
+import com.example.planner.schedule.ScheduleActivity;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
 
@@ -33,11 +42,68 @@ public class CalendarActivity extends AppCompatActivity {
     ArrayList<String> names;
     private Date visiblePosition = Calendar.getInstance().getTime();
     private MyDBHandlerCalendar myDBHandler;
+    private Button sendButton;
+    private Switch wifiSwitch;
+    private String dailyNote; //notatka która wysyła sie mailem
+
+    /*broadcast receiver do wifi */
+    private BroadcastReceiver wifiBroad = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int wifiState = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE, WifiManager.WIFI_STATE_UNKNOWN);
+
+            switch (wifiState) {
+                case WifiManager.WIFI_STATE_ENABLED:
+                    wifiSwitch.setChecked(true);
+                    wifiSwitch.setText("Wifi is on");
+                    break;
+                case WifiManager.WIFI_STATE_DISABLED:
+                    wifiSwitch.setChecked(false);
+                    wifiSwitch.setText("Wifi is off");
+                    break;
+            }
+        }
+    };
+
+    /* register wifi receiver */
+    @Override
+    protected void onStart() {
+      super.onStart();
+      IntentFilter intentFilter = new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION);
+      registerReceiver(wifiBroad, intentFilter);
+    }
+
+    /* unregister receiver */
+    @Override
+    protected void onStop() {
+        super.onStop();
+        unregisterReceiver(wifiBroad);
+    }
+
+    /* prepare for email sending */
+    private void prepMail() {
+        if (wifiSwitch.isChecked()) {
+            Intent intent = new Intent(this, EmailActivity.class);
+            intent.putExtra("note",dailyNote);
+            startActivity(intent);
+        } else {
+            Toast.makeText(CalendarActivity.this, "Wifi is off, cannot send mail", Toast.LENGTH_LONG).show();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
+
+        //send button init and listener
+        sendButton = findViewById(R.id.btnSend);
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                prepMail();
+            }
+        });
 
         dataView = findViewById(R.id.currentData);
         Date currentTime = Calendar.getInstance().getTime();
@@ -55,8 +121,10 @@ public class CalendarActivity extends AppCompatActivity {
             public void onDayClick(Date dateClicked) {
                 visiblePosition = dateClicked;
                 List<Event> events = calendarView.getEvents(dateClicked);
-                if (!events.isEmpty())
-                    Toast.makeText(CalendarActivity.this, "Note: "  + events.get(0).getData(), Toast.LENGTH_LONG).show();
+                if (!events.isEmpty()) {
+                    dailyNote = events.get(0).getData().toString();
+                    Toast.makeText(CalendarActivity.this, "Note: " + events.get(0).getData(), Toast.LENGTH_LONG).show();
+                }
             }
 
             @Override
@@ -65,6 +133,7 @@ public class CalendarActivity extends AppCompatActivity {
             }
         });
 
+        wifiSwitch = findViewById(R.id.switchWifi);
     }
 
     @Override

@@ -11,15 +11,15 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_marginTop="49dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="100dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        app:compactCalendarBackgroundColor="@color/colorAccent"
-        app:compactCalendarCurrentDayBackgroundColor="@color/colorList"
+        app:compactCalendarBackgroundColor="@color/colorList"
+        app:compactCalendarCurrentDayBackgroundColor="@color/colorAccent"
         app:compactCalendarCurrentSelectedDayBackgroundColor="@color/colorDetail"
         app:compactCalendarMultiEventIndicatorColor="#fff"
         app:compactCalendarTargetHeight="250dp"
-        app:compactCalendarTextColor="#fff"
+        app:compactCalendarTextColor="@color/colorPrimary"
         app:compactCalendarTextSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,6 +27,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/monthTextViewId"
         app:layout_constraintVertical_bias="0.087" />
+
+    <TextView
+        android:id="@+id/monthTextViewId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/calendarId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentData" />
 
     <TextView
         android:id="@+id/currentData"
@@ -43,15 +56,40 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/monthTextViewId"
-        android:layout_width="0dp"
+        android:id="@+id/emailTasks"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
-        android:gravity="center"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/calendarId"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currentData" />
+        android:layout_marginTop="8dp"
+        android:text="@string/emailTasks"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/calendarId"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/emailTasks"
+        tools:layout_editor_absoluteX="0dp">
+
+        <Switch
+            android:id="@+id/switchWifi"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:text="@string/wifiOff" />
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/sendBtn" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

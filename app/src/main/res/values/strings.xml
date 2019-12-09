@@ -21,5 +21,9 @@
     <string name="addCalendarNote">Add new note</string>
     <string name="dataFormat">dd.mm.yyyy</string>
     <string name="enterCalendarNote">Note</string>
+    <string name="wifiOn">Wifi is on</string>
+    <string name="wifiOff">Wifi is off</string>
+    <string name="sendBtn">Send</string>
+    <string name="emailTasks">Email tasks for the day</string>
 
 </resources>
