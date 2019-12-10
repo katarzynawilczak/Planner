@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".schedule.AddClass"
+    android:orientation="vertical"
+    android:padding="25dp">
+
+    <TextView
+        android:id="@+id/lbTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="Add a new class"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/lbClass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Class name:"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <EditText
+        android:id="@+id/edClass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="class name"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/lbDay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Day of the class:"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="10dp"/>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipDays"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:chipSpacingVertical="10dp"
+        app:singleSelection="true"
+        >
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipMon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_1"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipTue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_2"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipWed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_3"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipThur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_4"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipFri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_5"
+            android:clickable="true"
+            android:focusable="true"/>
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/lbFrom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="From:"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/edFrom"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="08:00"
+        android:inputType="time"
+        />
+
+    <TextView
+        android:id="@+id/lbTil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Til:"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/edTil"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="08:45"
+        android:inputType="time" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_marginTop="40dp"/>
+
+</LinearLayout>

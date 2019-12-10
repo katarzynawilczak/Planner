@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".calendar.EmailActivity"></activity>
+        <activity android:name=".schedule.AddClass"></activity>
+        <activity android:name=".calendar.EmailActivity" />
         <activity android:name=".AddToListActivity" />
         <activity android:name=".calendar.AddToCalendarActivity" />
         <activity android:name=".ListActivity" />
