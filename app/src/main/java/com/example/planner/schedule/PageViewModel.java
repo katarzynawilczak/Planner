@@ -18,22 +18,17 @@ public class PageViewModel extends ViewModel {
         public String apply(String input) {
             switch (input) {
                 case "Monday":
-
                     break;
                 case "Tuesday":
-
                     break;
                 case "Wednesday":
-
                     break;
                 case "Thursday":
-
                     break;
                 case "Friday":
-
                     break;
             }
-            return "No classes on " + input;
+            return "Your " + input + " classes:";
         }
     });
 

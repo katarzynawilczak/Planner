@@ -27,7 +27,7 @@ public class AddClass extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_class);
 
-        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         dbHandler = new MyDBHandler(this,null,null,1);
 
@@ -103,8 +103,6 @@ public class AddClass extends AppCompatActivity {
                className = cName.getText().toString();
                classFrom = cFrom.getText().toString();
                classTil  = cTil.getText().toString();
-
-                Toast.makeText(AddClass.this, className + " " + classFrom + " " + classTil, Toast.LENGTH_LONG).show();
 
                 OneClass oneClass = new OneClass(className, classDay, classFrom, classTil);
                 dbHandler.addClassToSchedule(oneClass);

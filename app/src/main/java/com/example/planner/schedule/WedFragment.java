@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.planner.R;
+
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -45,6 +48,32 @@ public class WedFragment extends Fragment {
                 textView.setText(s);
             }
         });
+
+        final ClassItem[] classItems = {};
+
+        /* list view */
+        final ListView listMon = (ListView) root.findViewById(R.id.listMon);
+
+        ArrayAdapter<ClassItem> listViewAdapter = new ArrayAdapter<ClassItem>(
+                getActivity(),
+                android.R.layout.simple_list_item_2,
+                android.R.id.text1,
+                classItems
+        ) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView text1 = (TextView) view.findViewById(android.R.id.text1);
+                TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+
+                text1.setText(classItems[position].getClassName());
+                text2.setText(classItems[position].getFrom() + " - " + classItems[position].getTil());
+                return view;
+            }
+        };
+
+        listMon.setAdapter(listViewAdapter);
+
         return root;
     }
 }
