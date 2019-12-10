@@ -5,5 +5,8 @@
     <item android:id="@+id/addCalendarNoteId"
         android:title="@string/addCalendarNote"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/removeCalendarNoteId"
+        android:title="@string/removeCalendarNote" />
 
 </menu>

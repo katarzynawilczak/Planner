@@ -10,6 +10,8 @@ import com.example.planner.MyDBHandler;
 import com.example.planner.R;
 import com.example.planner.Task;
 
+import java.util.ArrayList;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AddToCalendarActivity extends AppCompatActivity {
@@ -23,14 +25,17 @@ public class AddToCalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_to_calendar);
 
+        final String checkedDate = getIntent().getStringExtra("checkedDay");
+        date = findViewById(R.id.dateId);
+        note =  findViewById(R.id.note);
+
+        date.setText(checkedDate);
         dbHandler = new MyDBHandlerCalendar(this,null,null,1);
         addBtn = findViewById(R.id.noteId);
 
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                date = findViewById(R.id.dateId);
-                note =  findViewById(R.id.note);
                 String noteDate = date.getText().toString().trim();
                 String noteName = note.getText().toString().trim();
 
@@ -46,10 +51,13 @@ public class AddToCalendarActivity extends AppCompatActivity {
                     if(noteName.equals("")){
                         Toast.makeText(AddToCalendarActivity.this, "Note is required", Toast.LENGTH_LONG).show();
                     }
+                    else if(checkIfNoteExists(checkedDate)){
+                        Toast.makeText(AddToCalendarActivity.this, "Note exists", Toast.LENGTH_LONG).show();
+                    }
                     else {
                         Note note = new Note(noteDate,noteName);
                         dbHandler.addNote(note);
-                        Toast.makeText(AddToCalendarActivity.this, "Note added", Toast.LENGTH_LONG).show();
+                        Toast.makeText(AddToCalendarActivity.this, "Note added" + noteDate, Toast.LENGTH_LONG).show();
                         finish();
                     }
                 } catch (Exception e) {
@@ -59,5 +67,15 @@ public class AddToCalendarActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public boolean checkIfNoteExists(String date){
+        ArrayList<String> dates = dbHandler.getArrayOfNoteDates();
+        for(String d : dates){
+            if(d.equals(date)){
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -101,7 +101,6 @@ public class ListActivity extends AppCompatActivity  implements ListFragment.Ite
         taskName = findViewById(R.id.nameTextId);
         taskNameStr = taskName.getText().toString().trim();
         myDBHandler.deleteTask(taskNameStr);
-        FragmentManager manager = this.getSupportFragmentManager();
         finish();
         Intent intent = new Intent(this, ListActivity.class);
         startActivity(intent);
