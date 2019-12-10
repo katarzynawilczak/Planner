@@ -67,7 +67,7 @@ public class ListActivity extends AppCompatActivity  implements ListFragment.Ite
             }
         });
         if (findViewById(R.id.layout_portrait) != null){
-            FragmentManager  manager = this.getSupportFragmentManager();
+            FragmentManager manager = this.getSupportFragmentManager();
             manager.beginTransaction()
                     .hide(manager.findFragmentById(R.id.detailFrag))
                     .show(manager.findFragmentById(R.id.listFrag))

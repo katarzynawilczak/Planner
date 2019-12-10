@@ -1,5 +1,6 @@
 package com.example.planner.schedule;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +18,7 @@ public class AddClass extends AppCompatActivity {
     private Button saveBtn;
     //do zapisu class
     private String className, classFrom, classTil;
-    private Integer classDay;
+    private String classDay;
     private EditText cName, cFrom, cTil;
     private MyDBHandler dbHandler;
 
@@ -25,6 +26,8 @@ public class AddClass extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_class);
+
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         dbHandler = new MyDBHandler(this,null,null,1);
 
@@ -84,17 +87,17 @@ public class AddClass extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                if (chMon.isSelected()) {
-                   classDay = 0;
+                   classDay = "Monday";
                } else if (chTue.isSelected()) {
-                   classDay = 1;
+                   classDay = "Tuesday";
                } else if (chWed.isSelected()) {
-                   classDay = 2;
+                   classDay = "Wednesday";
                } else if (chThur.isSelected()) {
-                   classDay = 3;
+                   classDay = "Thursday";
                } else if (chFri.isSelected()) {
-                   classDay = 4;
+                   classDay = "Friday";
                } else {
-                   classDay = 0;
+                   classDay = "Monday";
                }
 
                className = cName.getText().toString();
@@ -103,8 +106,8 @@ public class AddClass extends AppCompatActivity {
 
                 Toast.makeText(AddClass.this, className + " " + classFrom + " " + classTil, Toast.LENGTH_LONG).show();
 
-                //Task task = new Task(taskName,taskDescp);
-                //dbHandler.addTask(task);
+                OneClass oneClass = new OneClass(className, classDay, classFrom, classTil);
+                dbHandler.addClassToSchedule(oneClass);
             }
         });
     }
