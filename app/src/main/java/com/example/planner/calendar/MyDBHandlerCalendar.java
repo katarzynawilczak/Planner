@@ -47,9 +47,9 @@ public class MyDBHandlerCalendar extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void deleteNote(String note){
+    public void deleteNote(String day){
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL(" DELETE FROM " + TABLE_NOTES + " WHERE " + COLUMN_NOTE + "=\"" + note + "\";" );
+        db.execSQL(" DELETE FROM " + TABLE_NOTES + " WHERE " + COLUMN_DATE + "=\"" + day + "\";" );
         db.close();
     }
 

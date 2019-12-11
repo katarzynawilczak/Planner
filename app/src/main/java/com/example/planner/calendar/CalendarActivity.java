@@ -122,12 +122,17 @@ public class CalendarActivity extends AppCompatActivity {
         dataView.setText(currentDate);
         setCurrentMonth(currentTime);
 
+        visiblePosition = currentTime;
+
+        myDBHandler = new MyDBHandlerCalendar(this,null,null,1);
+
         nameDay = findViewById(R.id.nameDay);
         Calendar cal = Calendar.getInstance();
         cal.setTime(currentTime);
         int month = cal.get(Calendar.MONTH) + 1;
         int day = cal.get(Calendar.DAY_OF_MONTH);
         new JSONTask().execute("https://api.abalin.net/namedays?country=us&month="+month+"&day=" + day);
+
 
         setNotesInCalendar();
 
@@ -158,6 +163,7 @@ public class CalendarActivity extends AppCompatActivity {
         });
 
         wifiSwitch = findViewById(R.id.switchWifi);
+        wifiSwitch.setClickable(false);
     }
 
     @Override
@@ -168,7 +174,6 @@ public class CalendarActivity extends AppCompatActivity {
     }
 
     public void setNotesInCalendar() {
-        myDBHandler = new MyDBHandlerCalendar(this,null,null,1);
         dates = myDBHandler.getArrayOfNoteDates();
         names = myDBHandler.getArrayOfNoteNames();
 
@@ -184,6 +189,11 @@ public class CalendarActivity extends AppCompatActivity {
             Event ev = new Event(Color.GREEN, date.getTime(), names.get(i));
             calendarView.addEvent(ev);
         }
+    }
+
+    public void deleteNote(String date){
+        myDBHandler.deleteNote(date);
+        setNotesInCalendar();
     }
 
     public void setCurrentMonth(Date currentTime){
@@ -209,11 +219,40 @@ public class CalendarActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.addCalendarNoteId) {
             Intent intent = new Intent(CalendarActivity.this, AddToCalendarActivity.class);
+            intent.putExtra("checkedDay", dateToString(visiblePosition));
             startActivity(intent);
+        }
+        else if (item.getItemId() == R.id.removeCalendarNoteId) {
+            String finalDate = dateToString(visiblePosition);
+            deleteNote(finalDate);
         }
         return super.onOptionsItemSelected(item);
     }
 
+    public String dateToString(Date date){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(visiblePosition);
+        int year = cal.get(Calendar.YEAR);
+        String yearStr = Integer.toString(year);
+        int month = cal.get(Calendar.MONTH)+1;
+        String monthStr="";
+        if(month<10) {
+            monthStr = "0" + month+1;
+        }
+        else {
+            monthStr = Integer.toString(month);
+        }
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        String dayStr = "";
+        if(day<10) {
+            dayStr = "0" + day;
+        }
+        else {
+            dayStr = Integer.toString(day);
+        }
+        String finalDate = dayStr +"." + monthStr + "." + yearStr;
+        return finalDate;
+    }
     @Override
     protected void onResume() {
         super.onResume();
