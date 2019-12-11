@@ -44,10 +44,27 @@ public class ScheduleActivity extends AppCompatActivity {
         });
     }
 
-    public void refresh(View view) {
-        finish();
-        Intent intent = new Intent(this, ScheduleActivity.class);
-        startActivity(intent);
-        Toast.makeText(this, "Task deleted", Toast.LENGTH_LONG).show();
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        ViewPagerAdapter tabsPagerAdapter = new ViewPagerAdapter(this, getSupportFragmentManager());
+
+        ViewPager viewPager = findViewById(R.id.view_pager);
+        viewPager.setAdapter(tabsPagerAdapter);
+
+        TabLayout tabs = findViewById(R.id.tabs);
+        tabs.setupWithViewPager(viewPager);
+
+        /* button foating */
+        floatBtn = findViewById(R.id.floatAdd);
+        floatBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ScheduleActivity.this, AddClass.class);
+                startActivity(intent);
+            }
+        });
     }
 }

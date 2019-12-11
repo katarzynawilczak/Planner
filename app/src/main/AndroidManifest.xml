@@ -18,7 +18,7 @@
         <activity android:name=".list.ListActivity" />
         <activity android:name=".schedule.ScheduleActivity" />
         <activity android:name=".calendar.CalendarActivity" />
-        <activity android:name=".list.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

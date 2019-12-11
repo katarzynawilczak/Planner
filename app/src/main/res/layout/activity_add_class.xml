@@ -13,18 +13,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
-        android:text="Add a new class"
-        android:textSize="30sp"
         android:gravity="center"
-        android:textColor="@color/colorPrimary"/>
+        android:text="Add a new class"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/lbClass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Class name:"
-        android:textSize="24sp"
-        android:textColor="@color/colorPrimaryDark"/>
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/edClass"
@@ -38,10 +38,10 @@
         android:id="@+id/lbDay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Day of the class:"
-        android:textSize="24sp"
         android:textColor="@color/colorPrimaryDark"
-        android:layout_marginTop="10dp"/>
+        android:textSize="20sp" />
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipDays"
@@ -96,10 +96,10 @@
         android:id="@+id/lbFrom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="From:"
-        android:textSize="24sp"
         android:textColor="@color/colorPrimaryDark"
-        android:layout_marginTop="10dp"/>
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/edFrom"
@@ -115,10 +115,10 @@
         android:id="@+id/lbTil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Til:"
-        android:textSize="24sp"
         android:textColor="@color/colorPrimaryDark"
-        android:layout_marginTop="10dp"/>
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/edTil"
@@ -133,7 +133,7 @@
         android:id="@+id/btnSave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Save" />
+        android:text="Save"
+        android:layout_marginTop="40dp"/>
 
 </LinearLayout>
