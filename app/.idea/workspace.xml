@@ -6,18 +6,7 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7260889-bcf8-4623-90aa-e4ea1096b109" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/planner/schedule/AddClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/planner/schedule/AddClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/planner/schedule/FriFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/planner/schedule/FriFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/planner/schedule/MonFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/planner/schedule/MonFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/planner/schedule/PageViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/planner/schedule/PageViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/planner/schedule/ThurFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/planner/schedule/ThurFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/planner/schedule/TueFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/planner/schedule/TueFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/planner/schedule/WedFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/planner/schedule/WedFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_schedule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_schedule.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/mon_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/mon_fragment.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f7260889-bcf8-4623-90aa-e4ea1096b109" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/../.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -106,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/planner/schedule/MonFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="647">
-              <caret line="71" column="44" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="71" selection-end-column="44" />
+              <caret line="71" column="44" selection-start-line="45" selection-start-column="8" selection-end-line="71" selection-end-column="44" />
               <folding>
                 <element signature="e#1539#1550#0" expanded="true" />
               </folding>
@@ -118,7 +107,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_schedule.xml">
           <provider editor-type-id="text-editor">
             <state relative-caret-position="166">
-              <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+              <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
             </state>
           </provider>
           <provider selected="true" editor-type-id="android-designer2" />
@@ -151,7 +140,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/mon_fragment.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-102">
-              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2" />
@@ -375,7 +364,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.3295302" />
@@ -534,7 +522,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/mon_fragment.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-102">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
@@ -552,7 +540,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_schedule.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="166">
-          <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2" />
@@ -571,7 +559,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/planner/schedule/MonFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="647">
-          <caret line="71" column="44" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="71" selection-end-column="44" />
+          <caret line="71" column="44" selection-start-line="45" selection-start-column="8" selection-end-line="71" selection-end-column="44" />
           <folding>
             <element signature="e#1539#1550#0" expanded="true" />
           </folding>
