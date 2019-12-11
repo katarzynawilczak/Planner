@@ -9,7 +9,7 @@
     android:padding="25dp"
     android:background="@color/colorDetail"
     android:orientation="vertical"
-    tools:context=".DetailFragment">
+    tools:context=".list.DetailFragment">
 
 
     <TextView

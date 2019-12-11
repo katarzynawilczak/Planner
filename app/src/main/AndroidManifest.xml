@@ -13,12 +13,12 @@
         android:theme="@style/AppTheme">
         <activity android:name=".schedule.AddClass"></activity>
         <activity android:name=".calendar.EmailActivity" />
-        <activity android:name=".AddToListActivity" />
+        <activity android:name=".list.AddToListActivity" />
         <activity android:name=".calendar.AddToCalendarActivity" />
-        <activity android:name=".ListActivity" />
+        <activity android:name=".list.ListActivity" />
         <activity android:name=".schedule.ScheduleActivity" />
         <activity android:name=".calendar.CalendarActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".list.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

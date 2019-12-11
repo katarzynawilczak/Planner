@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.planner.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -41,5 +42,12 @@ public class ScheduleActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    public void refresh(View view) {
+        finish();
+        Intent intent = new Intent(this, ScheduleActivity.class);
+        startActivity(intent);
+        Toast.makeText(this, "Task deleted", Toast.LENGTH_LONG).show();
     }
 }

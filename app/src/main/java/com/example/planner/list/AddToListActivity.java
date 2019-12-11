@@ -1,10 +1,12 @@
-package com.example.planner;
+package com.example.planner.list;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.planner.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 

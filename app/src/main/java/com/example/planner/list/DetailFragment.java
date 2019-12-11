@@ -1,4 +1,4 @@
-package com.example.planner;
+package com.example.planner.list;
 
 
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.planner.R;
 
 
 /**

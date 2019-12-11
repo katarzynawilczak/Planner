@@ -6,9 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.planner.MyDBHandler;
 import com.example.planner.R;
-import com.example.planner.Task;
 
 import java.util.ArrayList;
 

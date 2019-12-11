@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.planner.MyDBHandler;
+
 import com.example.planner.R;
 import com.google.android.material.chip.Chip;
 
@@ -20,7 +20,7 @@ public class AddClass extends AppCompatActivity {
     private String className, classFrom, classTil;
     private String classDay;
     private EditText cName, cFrom, cTil;
-    private MyDBHandler dbHandler;
+    private MyDBHandlerSchedule dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class AddClass extends AppCompatActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        dbHandler = new MyDBHandler(this,null,null,1);
+        dbHandler = new MyDBHandlerSchedule(this,null,null,1);
 
         chMon = findViewById(R.id.chipMon);
         chTue = findViewById(R.id.chipTue);
@@ -106,6 +106,10 @@ public class AddClass extends AppCompatActivity {
 
                 OneClass oneClass = new OneClass(className, classDay, classFrom, classTil);
                 dbHandler.addClassToSchedule(oneClass);
+
+                finish();
+                Toast.makeText(AddClass.this, "Added", Toast.LENGTH_SHORT).show();
+
             }
         });
     }

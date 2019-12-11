@@ -1,9 +1,10 @@
-package com.example.planner;
+package com.example.planner.list;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.planner.R;
 import com.example.planner.calendar.CalendarActivity;
 import com.example.planner.schedule.ScheduleActivity;
 
